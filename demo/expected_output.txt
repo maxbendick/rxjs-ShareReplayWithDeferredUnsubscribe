@@ -1,0 +1,35 @@
+source subscribed!
+timer emitted 0
+observer a 0
+observer b 0
+timer emitted 1
+observer a 1
+observer b 1
+unsubscribing b
+timer emitted 2
+observer a 2
+unsubscribing a (no more observers)
+subscribing c (first observer back - before teardown trigger)
+observer c 2
+timer emitted 3
+observer c 3
+subscribing d
+timer emitted 4
+observer c 4
+observer d 4
+unsubscribing c
+timer emitted 5
+observer d 5
+unsubscribing d
+timer emitted 6
+source unsubscribed!
+this is immediately after source unsubscribed
+subscribing c (first observer back - after teardown trigger - timer should reset)
+source subscribed!
+timer emitted 0
+observer e 0
+unsubscribing e
+timer emitted 1
+source unsubscribed!
+this is immediately after source unsubscribed
+done!
